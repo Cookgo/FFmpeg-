@@ -1,4 +1,4 @@
-﻿#include "myffmpeg.h"
+﻿#include "MyFFmpeg.h"
 
 static double r2d(AVRational r)
 {
@@ -48,7 +48,6 @@ int MyFFmpeg::OpenVideo(const char *path)
             if (!codec)
             {
                 mtx.unlock();
-                qDebug("没有该类型的解码器");
                 return 0;
             }
 
@@ -61,7 +60,6 @@ int MyFFmpeg::OpenVideo(const char *path)
                 mtx.unlock();
                 char buf[1024] = { 0 };
                 av_strerror(err, buf, sizeof(buf));
-                 qDebug("解码器打开失败");
                 return 0;
             }
         }
@@ -237,10 +235,11 @@ bool MyFFmpeg::YuvToRGB(char *out, int outweight, int outheight)
         data,
         linesize
         );
-//    return true;
+
+    //return true;
+    //已返回，何来解锁，永远死锁。
+    //曾经画面一直无法播放，无法找到原因。一句代码，影响整个系统，越简单的错误，越容易忽视。
     mtx.unlock();
-
-
 }
 
 int MyFFmpeg::ToPCM(char *out)
@@ -304,7 +303,7 @@ bool MyFFmpeg::Seek(float pos)
         return true;
     }
     //关键帧，P帧， B帧
-   else return false;
+    return false;
 }
 
 int MyFFmpeg::GetPts(const AVPacket *pkt)
@@ -319,4 +318,3 @@ int MyFFmpeg::GetPts(const AVPacket *pkt)
     mtx.unlock();
     return pts;
 }
-

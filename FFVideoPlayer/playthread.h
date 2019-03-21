@@ -20,4 +20,5 @@ public:
 protected:
     PlayThread();
 };
+
 #endif // PLAYTHREAD_H

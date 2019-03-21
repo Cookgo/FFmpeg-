@@ -1,7 +1,6 @@
 #ifndef MYFFMPEG_H
 #define MYFFMPEG_H
 
-
 #include <QMutex>
 
 extern "C"

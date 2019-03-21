@@ -25,7 +25,7 @@ void PlayThread::run()
     {
         if (!(MyFFmpeg::GetObj()->m_isPlay))
         {
-            msleep(10);
+            msleep(10); //调试方便，5微秒后窗口又关闭了，线程继续阻塞，此时可以点击【打开视频按钮】选择视频
             continue;
         }
 

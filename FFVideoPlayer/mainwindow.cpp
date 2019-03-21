@@ -99,8 +99,8 @@ void MainWindow::sliderReleased()
     MyFFmpeg::GetObj()->Seek(pos);
 }
 
-void MainWindow::mousePressEvent(QMouseEvent *e)
-{
-    int value = ((float)(e->pos().x()) / (float)(this->width())) * (ui->timeSlider->maximum() + 1);
-    ui->timeSlider->setValue(value);
-}
+//void MainWindow::mousePressEvent(QMouseEvent *e)
+//{
+//    int value = ((float)(e->pos().x()) / (float)(this->width())) * (ui->timeSlider->maximum() + 1);
+//    ui->timeSlider->setValue(value);
+//}

@@ -1,5 +1,6 @@
 #ifndef VIDEOVIEWWIDGET_H
 #define VIDEOVIEWWIDGET_H
+
 #include <QOpenGLWidget>
 
 class VideoViewWidget : public QOpenGLWidget
@@ -13,4 +14,5 @@ public:
     void paintEvent(QPaintEvent *e);
     void timerEvent(QTimerEvent *e);
 };
+
 #endif // VIDEOVIEWWIDGET_H

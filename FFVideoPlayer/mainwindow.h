@@ -17,7 +17,7 @@ class MainWindow : public QMainWindow
         MainWindow(QWidget *parent = Q_NULLPTR);
 
         void timerEvent(QTimerEvent *e);
-        void mousePressEvent(QMouseEvent *e); //重写该函数
+//        void mousePressEvent(QMouseEvent *e); //重写该函数
 
     public slots:
         void slotOpenFile();
@@ -25,7 +25,6 @@ class MainWindow : public QMainWindow
 
         void sliderPressed();
         void sliderReleased();
-
 private:
     Ui::MainWindow *ui;
 };

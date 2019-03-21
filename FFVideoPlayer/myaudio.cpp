@@ -1,4 +1,6 @@
-#include "myaudio.h"
+#include "MyAudio.h"
+
+
 MyAudio::MyAudio()
 {
 }

@@ -10,7 +10,7 @@ using namespace std;
 VideoViewWidget::VideoViewWidget(QWidget *parent)
     : QOpenGLWidget(parent)
 {
-    startTimer(20); //刷新视频
+    startTimer(10); //刷新视频
     PlayThread::GetObj()->start();
 }
 
